@@ -28,6 +28,7 @@ void help(){
     << "Command        Arguments                Description\n"
     << "------         ---------                -----------\n"
     << "-h, --help     [none]                   Shows this help display\n"
-    << "-g, --upgrade  [none]                   Upgrades your package manger (chocolatey / brew / apt) \n"
+    << "-u, --update   [none]                   Updates your package manager (chocolatey / brew / apt) \n"
+    << "-g, --upgrade  [none]                   Upgrades your packages managed by the package manager (chocolatey / brew / apt) \n"
     << std::endl;
 }

@@ -1,5 +1,5 @@
-#include "../helpers/os_checker.cpp";
-#include "../helpers/macos_helpers.cpp";
+// #include "../helpers/os_checker.cpp";
+// #include "../helpers/macos_helpers.cpp";
 
 void upgrade() {
 
@@ -13,7 +13,8 @@ void upgrade() {
     }
 
     if (isMacOS()) {
-        std::cout << green << "Koala sees your are using MacOS, it will now upgrade your brew to the latest available version." << reset << std::endl;
+        std::cout << green << "Koala sees your are using MacOS, it will now upgrade your brew packages to the latest available version." << reset << std::endl;
+        std::cout << exec("brew upgrade --dry-run") << std::endl;
         std::cout << cyan << "Do you want to continue? (Y)es/(N)o: " << reset;
         std::string answer;
         std::cin >> answer;
@@ -22,13 +23,9 @@ void upgrade() {
             std::vector<std::string> inputs;
             inputs.push_back("Yes");
             std::cout << execInteractive("brew upgrade", inputs) << std::endl;
-            std::cout << green << "Koala has upgraded brew to the latest version for you." << reset << std::endl;
-
-            std::string brew_version = exec("brew --version", false);
-            std::string brew_version_number = brew_version.substr(std::string("Homebrew ").length());
-            std::cout << green << "You are now running brew on version: " << brew_version_number << reset << std::endl;
+            std::cout << green << "Koala has upgraded your brew pacakges to their latest versions for you." << reset << std::endl;
         } else {
-            std::cout << green << "You chose not to upgrade brew, koala will not help you." << reset << std::endl;
+            std::cout << green << "You chose not to upgrade, koala will not help you." << reset << std::endl;
         }
 
         return;
