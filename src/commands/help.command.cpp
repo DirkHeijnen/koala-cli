@@ -1,6 +1,6 @@
 #include <iostream>
 
-void showHelp(){
+void help(){
 
     const std::string red("\033[0;31m");
     const std::string green("\033[1;32m");
