@@ -1,5 +1,7 @@
 #include "../helpers/os_checker.cpp";
 #include "../helpers/macos_helpers.cpp";
+#include "../helpers/string_utils.cpp";
+
 
 void update() {
 
@@ -35,7 +37,25 @@ void update() {
     }
 
     if (isLinux()) {
-        std::cout << "Koala sees your are using Linux, which is not supported yet." << std::endl;
+        std::cout << "Koala sees your are using Linux, it will now update your apt installation to the latest available version." << std::endl;
+        std::cout << cyan << "Do you want to continue? (Y)es/(N)o: " << reset;
+        std::string answer;
+        std::cin >> answer;
+
+        if (answer == "Y" || answer == "y" || answer == "yes" || answer == "Yes") {
+            std::vector<std::string> inputs;
+            execInteractive("apt update", inputs);
+            std::cout << green << "Koala has updated apt to the latest version for you." << reset << std::endl;
+
+            std::string apt_version = exec("apt --version", false);
+            replace(apt_version, "apt ", "");
+            replace(apt_version, " (amd64)", "");
+
+            std::cout << green << "You are now running apt on version: " << apt_version << reset << std::endl;
+        } else {
+            std::cout << green << "You chose not to upgrade apt, koala will not help you." << reset << std::endl;
+        }
+
         return;
     }
 

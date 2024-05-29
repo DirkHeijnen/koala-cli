@@ -30,10 +30,21 @@ void upgrade() {
 
         return;
     }
-
+    
     if (isLinux()) {
-        std::cout << "Koala sees your are using Linux, which is not supported yet." << std::endl;
+        std::cout << "Koala sees your are using Linux, it will now upgrade your apt packages to the latest available version." << std::endl;
+        std::cout << cyan << "Do you want to continue? (Y)es/(N)o: " << reset;
+        std::string answer;
+        std::cin >> answer;
+
+        if (answer == "Y" || answer == "y" || answer == "yes" || answer == "Yes") {
+            std::vector<std::string> inputs;
+            execInteractive("apt upgrade -y", inputs);
+            std::cout << green << "Koala has upgraded your apt packages to the latest version for you." << reset << std::endl;
+        } else {
+            std::cout << green << "You chose not to upgrade apt, koala will not help you." << reset << std::endl;
+        }
+
         return;
     }
-
 }
