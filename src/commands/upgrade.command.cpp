@@ -1,8 +1,8 @@
 #include <string>
 #include <iostream>
 
-#include "../../include/helpers/os_checker.hpp"
-#include "../../include/helpers/macos_helpers.hpp"
+#include "helpers/os_checker.hpp"
+#include "helpers/macos_helpers.hpp"
 
 
 void upgrade() {

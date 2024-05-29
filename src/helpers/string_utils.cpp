@@ -1,5 +1,5 @@
 #include <string>
-#include "../../include/helpers/string_utils.hpp"
+#include "helpers/string_utils.hpp"
 
 void replace(std::string& input, std::string value, std::string replaceValue) {
     size_t position = input.find(value);
