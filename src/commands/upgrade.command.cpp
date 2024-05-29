@@ -1,5 +1,9 @@
-// #include "../helpers/os_checker.cpp";
-// #include "../helpers/macos_helpers.cpp";
+#include <string>
+#include <iostream>
+
+#include "../helpers/os_checker.hpp"
+#include "../helpers/macos_helpers.hpp"
+
 
 void upgrade() {
 

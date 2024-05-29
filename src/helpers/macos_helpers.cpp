@@ -1,3 +1,4 @@
+#include "macos_helpers.hpp"
 #include <iostream>
 #include <memory>
 #include <stdexcept>
@@ -9,7 +10,7 @@
 #include <cstring>
 #include <vector>
 
-std::string exec(const char* cmd, bool shouldPrint = true) {
+std::string exec(const char* cmd, bool shouldPrint) {
     std::array<char, 128> buffer;
     std::string result;
 

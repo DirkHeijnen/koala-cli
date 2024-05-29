@@ -1,4 +1,4 @@
-// Check if user is on windows.
+#include "os_checker.hpp"
 
 bool isWindows() {
     #ifdef _WIN32

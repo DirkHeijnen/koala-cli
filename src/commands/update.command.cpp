@@ -1,6 +1,9 @@
-#include "../helpers/os_checker.cpp";
-#include "../helpers/macos_helpers.cpp";
-#include "../helpers/string_utils.cpp";
+#include "../helpers/os_checker.hpp"
+#include "../helpers/macos_helpers.hpp"
+#include "../helpers/string_utils.hpp"
+
+#include <iostream>
+#include <string>
 
 
 void update() {

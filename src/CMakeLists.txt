@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.7...3.22)
+
+set(LIBRARY_NAME koala_lib)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS ./**/*.hpp)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ./**/*.cpp)
+
+
+add_library(${LIBRARY_NAME} ${SOURCES} ${HEADERS})
+target_compile_features(${LIBRARY_NAME} PUBLIC cxx_std_11)
