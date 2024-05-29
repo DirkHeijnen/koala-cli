@@ -1,4 +1,4 @@
-#include "os_checker.hpp"
+#include "../../include/helpers/os_checker.hpp"
 
 bool isWindows() {
     #ifdef _WIN32

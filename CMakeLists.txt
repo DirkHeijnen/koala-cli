@@ -14,11 +14,18 @@ project(${APPLICATION_NAME} VERSION 1.0
                             DESCRIPTION "Koala CLI tool"
                             LANGUAGES CXX)
 
-add_subdirectory(src)
+
 
 
 
 set(EXECUTABLE_NAME koala)
 add_executable(${EXECUTABLE_NAME} main.cpp)
+
+set(LIBRARY_NAME koala_lib)
+file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS ./include/**/*.hpp)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ./src/**/*.cpp)
+add_library(${LIBRARY_NAME} ${SOURCES} ${HEADERS})
+target_compile_features(${LIBRARY_NAME} PUBLIC cxx_std_11)
+
 target_compile_features(${EXECUTABLE_NAME} PRIVATE cxx_std_11)
 target_link_libraries(${EXECUTABLE_NAME} PRIVATE koala_lib)

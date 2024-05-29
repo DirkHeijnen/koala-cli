@@ -1,6 +1,6 @@
-#include "../helpers/os_checker.hpp"
-#include "../helpers/macos_helpers.hpp"
-#include "../helpers/string_utils.hpp"
+#include "../../include/helpers/os_checker.hpp"
+#include "../../include/helpers/macos_helpers.hpp"
+#include "../../include/helpers/string_utils.hpp"
 
 #include <iostream>
 #include <string>
